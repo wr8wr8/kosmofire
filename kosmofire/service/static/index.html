@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KosmoFire</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<aside id="panel">
+  <h1>KosmoFire</h1>
+  <form id="query">
+    <label>Область запроса
+      <select id="area-mode">
+        <option value="view">Текущий вид карты</option>
+        <option value="bbox">Прямоугольник (w,s,e,n)</option>
+      </select>
+    </label>
+    <input id="bbox" placeholder="west,south,east,north" hidden>
+    <div class="row">
+      <label>С <input type="date" id="date-from"></label>
+      <label>По <input type="date" id="date-to"></label>
+    </div>
+    <div class="row">
+      <button type="submit">Показать</button>
+      <button type="button" id="fit">К данным</button>
+    </div>
+  </form>
+  <section id="report" aria-live="polite"></section>
+  <section class="downloads">
+    <a id="dl-geojson" href="#">Контуры GeoJSON</a>
+    <a id="dl-shp" href="#">Контуры Shapefile</a>
+    <a id="dl-csv" href="#">Справка CSV</a>
+    <a id="dl-json" href="#">Справка JSON</a>
+  </section>
+  <p id="status"></p>
+</aside>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

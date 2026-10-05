@@ -1,0 +1,4 @@
+catboost==1.2.10
+optuna==5.0.0
+shap==0.52.0
+torch==2.14.0
